@@ -221,7 +221,7 @@ export default function TasksPage() {
                             </div>
 
                             <div className="flex-1 overflow-y-auto pr-0.5">
-                                <div className="grid grid-cols-1 in-[.w-\[85vw\]]:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                                <div  className=" flex flex-col gap-2">
                                     {tasks.map((tk) => (
                                         <div key={tk.id} draggable onDragStart={(e) => dnd.onCardDragStart(e, tk.id, colId)} onDragEnd={dnd.onDragEnd} onClick={() => openEdit(tk)} className={cls("bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all cursor-pointer group", dnd.draggingId === tk.id ? "opacity-40 scale-95" : "", tk.isCompleted ? "opacity-60" : "")}>
                                             {tk.imageUrl && (
